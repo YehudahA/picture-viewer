@@ -1,0 +1,42 @@
+.popup-img,
+.img-drag-wrapper {
+  width: 100%;
+}
+
+.img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-zoom-cmds {
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  inset-inline-start: 0px;
+  margin: 20px;
+  display: grid;
+  gap: 2px;
+}
+
+.img-zoom-cmds > button {
+  width: 70px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.img-zoom-cmds > svg {
+  margin: 0;
+  width: 100%;
+}
+
+.img-zoom-cmds circle {
+  fill: #f2df5e;
+}
+
+.img-zoom-cmds path {
+  fill: black;
+  stroke: black;
+  stroke-width: 2px;
+}

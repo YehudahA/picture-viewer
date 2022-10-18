@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+import AppForm from './components/AppForm';
+import AppModal from './components/Modal';
+import PictureView from './components/PictureView';
+
+
+export default function App() {
+  const [pictureUrl, setPictureUrl] = useState('');
+  const [showPictureModal, setShowPictureModal] = useState(false);
+
+  const onFormSubmit = (url) => {
+    setPictureUrl(url);
+    setShowPictureModal(true);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <AppForm onSubmit={onFormSubmit} />
+
+      <AppModal title="Try Zoop Picture Or Drag It" show={showPictureModal} showHandler={setShowPictureModal}>
+        <PictureView url={pictureUrl} />
+      </AppModal>
+    </main>
   );
 }
-
-export default App;
